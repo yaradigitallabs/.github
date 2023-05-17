@@ -1,0 +1,13 @@
+{
+    "name": "CodeQL-JS",
+    "description": "Github Advanced Security - CodeQL - JavaScript.",
+    "iconName": "codeql-js",
+    "categories": [
+        "Javascript",
+        "Security"
+    ],
+    "filePatterns": [
+        "package.json$",
+        ".*\\.js$"
+    ]
+}

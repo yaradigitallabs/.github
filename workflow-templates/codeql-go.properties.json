@@ -1,0 +1,14 @@
+{
+    "name": "CodeQL-Go",
+    "description": "Github Advanced Security - CodeQL - Golang.",
+    "iconName": "codeql-go",
+    "categories": [
+        "Go",
+        "Security"
+    ],
+    "filePatterns": [
+        "go.mod$",
+        "go.sum$",
+        ".*\\.go$"
+    ]
+}

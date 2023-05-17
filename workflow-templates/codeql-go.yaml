@@ -2,44 +2,16 @@ name: "CodeQL-Go"
 
 on:
   push:
-    branches: [ $default-branch ]
+    branches: [ "master" ]
   pull_request:
-    branches: [ $default-branch ]
+    branches: [ "master" ]
   schedule:
-    - cron: '00 3 * * 1-5'
+    - cron: '00 3 * * 1'
 
 jobs:
-  analyze:
-    name: Analyze
-    runs-on: gh-runner-ops-ghas
-    permissions:
-      actions: read
-      contents: read
-      security-events: write
-
-    strategy:
-      fail-fast: false
-      matrix:
-        language: [ 'go' ]
-
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-
-    # Initializes the CodeQL tools for scanning.
-    - name: Initialize CodeQL
-      uses: github/codeql-action/init@v2
-      with:
-        languages: ${{ matrix.language }}
-
-
-    # Autobuild attempts to build any compiled languages  (C/C++, C#, Go, or Java).
-    # If this step fails, then you should cutomize your own pipeline.
-    - name: Autobuild
-      uses: github/codeql-action/autobuild@v2
-
-    - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v2
-      with:
-        category: "/language:${{matrix.language}}"
+  codeql-go:
+    uses: yaradigitallabs/pipeline-actions-templates/.github/workflows/codeql-go.yaml@master
+    with:
+      go_version: 1.18
+      strategy_fail_fast: false
 

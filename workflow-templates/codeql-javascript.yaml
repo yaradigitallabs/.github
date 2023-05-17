@@ -1,0 +1,16 @@
+name: "CodeQL-JavaScript"
+
+on:
+  push:
+    branches: [ $default-branch ]
+  pull_request:
+    branches: [ $default-branch ]
+  schedule:
+    - cron: '00 5 * * 1'
+
+jobs:
+  codeql-javascript:
+    uses: yaradigitallabs/pipeline-actions-templates/.github/workflows/codeql-js.yaml@master
+    with:
+      strategy_fail_fast: false
+
