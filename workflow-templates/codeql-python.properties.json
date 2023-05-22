@@ -1,0 +1,14 @@
+{
+    "name": "CodeQL-Python",
+    "description": "Github Advanced Security - CodeQL - Python.",
+    "iconName": "codeql-python",
+    "categories": [
+        "Python",
+        "Security"
+    ],
+    "filePatterns": [
+        "requirements.txt$",
+        "__init__.py$",
+        ".*\\.py$"
+    ]
+}

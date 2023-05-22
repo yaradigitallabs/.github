@@ -1,0 +1,18 @@
+name: "CodeQL-Python"
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+  schedule:
+    - cron: '00 3 * * 1'
+
+# in case setup_autobuild_python_dependencies get failed, try to set it as false
+jobs:
+  codeql-go:
+    uses: yaradigitallabs/pipeline-actions-templates/.github/workflows/codeql-python.yaml@master
+    with:
+      strategy_fail_fast: false
+      setup_autobuild_python_dependencies: true
+
